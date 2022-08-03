@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserDetailsService, UserService{
         if (myUser == null) {
             throw new UsernameNotFoundException("Unknown user: " + username);
         }
-        return new ru.kata.spring.boot_security.demo.entities.User(myUser.getId(), myUser.getName()
+        return new User(myUser.getId(), myUser.getName()
                 , myUser.getSurname(), myUser.getUsername(), myUser.getPassword(), myUser.getAge()
                 , myUser.getEmail(), (myUser.getRoles()));
     }
@@ -37,12 +37,12 @@ public class UserServiceImpl implements UserDetailsService, UserService{
     }
 
     @Override
-    public List<ru.kata.spring.boot_security.demo.entities.User> getListUsers() {
+    public List<User> getListUsers() {
         return userDao.getListUsers();
     }
 
     @Override
-    public ru.kata.spring.boot_security.demo.entities.User getUserById(long id) {
+    public User getUserById(long id) {
         return userDao.getUserById(id);
     }
 
