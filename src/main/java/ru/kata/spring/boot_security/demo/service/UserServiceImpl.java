@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserDetailsService, UserService{
 
     @Transactional
     @Override
-    public void addUser(ru.kata.spring.boot_security.demo.entities.User user) {
+    public void addUser(User user) {
         userDao.addUser(user);
     }
 
